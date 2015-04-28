@@ -1,0 +1,284 @@
+<html>
+<head>
+    <title>Owly h4x</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!--script src="./js/get_images.js"></script-->
+        <script src="./js/masonry.pkgd.min.js"></script>
+	<script src="./js/imagesloaded.pkgd.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/grid.css"/>
+        <link rel="stylesheet" href="./css/shadow.css"/>
+        <link rel="stylesheet" href="./css/custom.css"/>
+    <script>
+// layout Masonry again after all images have loaded
+        $(document).ready(function() {
+
+	$('.js-masonry').each(function(i) {
+		console.log($(this));
+		var $container = $(this).masonry();
+		console.log($container);
+		$container.imagesLoaded( function() {
+		  $container.masonry();
+		});
+	});
+
+
+        function rnd2(width) {
+                rnd = ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random())) / 6;
+                return Math.round(rnd * width)
+        }
+        function getRandomFraction( i ) {
+            //return Math.floor((Math.random() * (i-1)+2))
+                return i
+
+        }
+
+        //var main_width = document.getElementById('grid').style.width; 
+        var main_width = $("#grid").width();
+
+        $(".foo").each(function() { 
+            // var width = rnd2(150);
+            // var q =  getRandomFraction( 4 );
+            var q = Math.random(); 
+            var width = main_width / 6; 
+            //if( q > 0.9 ) width = width * 2; 
+            // var width = 900 / q; //1000 / getRandomFraction( 4 );
+            this.style.width = width;
+        });
+
+        $(".quu").each(function() { 
+            // var width = rnd2(150);
+            // var q =  getRandomFraction( 4 );
+            var q = Math.random(); 
+            var width = main_width / 6; 
+            if( q > 0.9 ) width = width * 2; 
+            // var width = 900 / q; //1000 / getRandomFraction( 4 );
+            this.style.width = width;
+        });
+        $(".duu").each(function() { 
+            // var width = rnd2(150);
+            var width = main_width / 6; 
+            // var q =  getRandomFraction( 4 );
+            // var q = Math.random(); 
+            // if( q > 0.9 ) width = width * 2; 
+            var w =  this.getElementsByTagName('img')[0].naturalWidth;
+            if( w > 200 ) width = width * 2;
+            // var width = 900 / q; //1000 / getRandomFraction( 4 );
+            this.style.width = width;
+        });
+        });
+    </script>
+</head>
+<body>
+
+<div id="header" class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand visible-xs-block" href="#"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#">Buyers</a></li>
+                <li><a href="#">Brokers</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a href="#"><b><span class="glyphicon glyphicon-ruble"></span></b> currancy</a> </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <b>Ru-ru</b> language <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li> <a href="javascript:set_site_language('ru')"> Русский </a> </li>
+                        <li> <a href="javascript:set_site_language('en')"> English </a> </li>
+                        <li> <a href="javascript:set_site_language('de')"> Deutsch </a> </li>
+                    </ul>
+                </li>
+                <li>
+                    <li>
+                        <a href="/cabinet/login"> <span class="glyphicon glyphicon-lock"></span> Login and registration </a>
+                    </li>
+                </li>
+                <li> <a href="/about/"> <span class="glyphicon glyphicon-question-sign"></span> About </a> </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-offset-3 col-lg-6 text-center">
+            <a href="/"> <img id="logo" src="../images/logo.png"> </a>
+        </div>
+
+        <div class="col-lg-12 text-center" style="margin-top: 20px;">
+            <ul id="main-menu" class="list-inline">
+                <li> <a class="menu-element" href="/catalog/">Catalog</a>   </li>
+                <li> <a class="menu-element" href="/news/"   >Brokers</a>   </li>
+                <li> <a class="menu-element" href="/news/"   >Shipyards</a> </li>
+                <li> <a class="menu-element" href="/news/"   >News</a>      </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <h3 style='text-align:center'>Original width</h3>
+    <div id="grid">
+        <div id="imscontainer" class="js-masonry">
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_1.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_2.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_3.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_4.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_5.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_6.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_7.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_8.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_9.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_10.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_11.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_12.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_13.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_14.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_15.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_16.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_17.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_18.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_19.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_20.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_21.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_22.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_23.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_24.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_25.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_26.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_27.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_28.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_29.png", width='100%'></div></div></div>
+            <div class="item"><div class="aoo"> <div style='margin: 0 0 0 0'><img src="../images/img_30.png", width='100%'></div></div></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h3 style='text-align:center'>Resize</h3>
+    <div id="grid">
+        <div id="mscontainer" class="js-masonry">
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_1.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_2.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_3.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_4.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_5.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_6.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_7.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_8.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_9.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_10.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_11.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_12.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_13.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_14.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_15.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_16.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_17.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_18.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_19.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_20.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_21.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_22.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_23.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_24.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_25.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_26.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_27.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_28.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_29.png", width='100%'></div></div></div>
+            <div class="item"><div class="foo"> <div style='margin: 0 0 0 0'><img src="../images/img_30.png", width='100%'></div></div></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h3 style='text-align:center'>Resize with some randomness</h3>
+    <div id="grid">
+        <div id="mscontainer" class="js-masonry">
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_1.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_2.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_3.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_4.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_5.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_6.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_7.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_8.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_9.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_10.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_11.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_12.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_13.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_14.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_15.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_16.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_17.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_18.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_19.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_20.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_21.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_22.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_23.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_24.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_25.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_26.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_27.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_28.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_29.png", width='100%'></div></div></div>
+            <div class="item"><div class="quu"> <div style='margin: 0 0 0 0'><img src="../images/img_30.png", width='100%'></div></div></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h3 style='text-align:center'>Resize keeping widest wider</h3>
+    <div id="grid">
+        <div id="mscontainer" class="js-masonry">
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_1.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_2.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_3.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_4.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_5.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_6.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_7.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_8.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_9.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_10.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_11.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_12.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_13.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_14.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_15.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_16.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_17.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_18.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_19.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_20.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_21.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_22.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_23.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_24.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_25.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_26.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_27.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_28.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_29.png", width='100%'></div></div></div>
+            <div class="item"><div class="duu"> <div style='margin: 0 0 0 0'><img src="../images/img_30.png", width='100%'></div></div></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

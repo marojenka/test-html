@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>Owly h4x</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!--script src="./js/get_images.js"></script-->
+        <script src="./js/masonry.pkgd.min.js"></script>
+	<script src="./js/imagesloaded.pkgd.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/grid.css"/>
+        <link rel="stylesheet" href="./css/shadow.css"/>
+        <link rel="stylesheet" href="./css/custom.css"/>
+        <link rel="stylesheet" href="./css/glow.css"/>
+    <script>
+// layout Masonry again after all images have loaded
+        $(document).ready(function() {
+
+	$('.js-masonry').each(function(i) {
+		console.log($(this));
+		var $container = $(this).masonry();
+		console.log($container);
+		$container.imagesLoaded( function() {
+		  $container.masonry();
+		});
+	});
+
+
+        function rnd2(width) {
+                rnd = ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random())) / 6;
+                return Math.round(rnd * width)
+        }
+        function getRandomFraction( i ) {
+            //return Math.floor((Math.random() * (i-1)+2))
+                return i
+
+        }
+
+        //var main_width = document.getElementById('grid').style.width; 
+        var main_width = $("#grid").width();
+
+        $(".foo").each(function() { 
+            // var width = rnd2(150);
+            // var q =  getRandomFraction( 4 );
+            var q = Math.random(); 
+            var width = main_width / 6; 
+            //if( q > 0.9 ) width = width * 2; 
+            // var width = 900 / q; //1000 / getRandomFraction( 4 );
+            this.style.width = width;
+        });
+
+        $(".quu").each(function() { 
+            // var width = rnd2(150);
+            // var q =  getRandomFraction( 4 );
+            var q = Math.random(); 
+            var width = main_width / 6; 
+            if( q > 0.7 ) width = width * 2; 
+            // var width = 900 / q; //1000 / getRandomFraction( 4 );
+            this.style.width = width;
+        });
+        $(".duu").each(function() { 
+            // var width = rnd2(150);
+            var width = main_width / 6; 
+            // var q =  getRandomFraction( 4 );
+            // var q = Math.random(); 
+            // if( q > 0.9 ) width = width * 2; 
+            var w =  this.getElementsByTagName('img')[0].naturalWidth;
+            if( w > 200 ) width = width * 2;
+            // var width = 900 / q; //1000 / getRandomFraction( 4 );
+            this.style.width = width;
+        });
+        });
+    </script>
+</head>
+<body>
+
+<div id="header" class="container">
+    <nav class="navbar">
+        <div class='row'>
+        <div class="col-lg-offset-3 col-lg-6 text-center">
+            <a href="/"> <img id="logo" src="../images/logo.png"> </a>
+        </div>
+        </div>
+
+        <div class='row'>
+            <h3 class='glow' ><a href='./'>I REGRET NOTHING</a></h3>
+        </div>
+
+    </nav>
+</div>
+
+<div class="container">
+    <div id="grid">
+        <div id="mscontainer" class="js-masonry">
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_0.png' ><img src="../images/julias/julia_0.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_1.png' ><img src="../images/julias/julia_1.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_2.png' ><img src="../images/julias/julia_2.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_3.png' ><img src="../images/julias/julia_3.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_4.png' ><img src="../images/julias/julia_4.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_5.png' ><img src="../images/julias/julia_5.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_6.png' ><img src="../images/julias/julia_6.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_7.png' ><img src="../images/julias/julia_7.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_8.png' ><img src="../images/julias/julia_8.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_9.png' ><img src="../images/julias/julia_9.png" , width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_10.png'><img src="../images/julias/julia_10.png", width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_11.png'><img src="../images/julias/julia_11.png", width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_12.png'><img src="../images/julias/julia_12.png", width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_13.png'><img src="../images/julias/julia_13.png", width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_14.png'><img src="../images/julias/julia_14.png", width='100%'></a></div></div>
+            <div class="item"><div class="quu"> <a href='/images/julias/julia_15.png'><img src="../images/julias/julia_15.png", width='100%'></a></div></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
